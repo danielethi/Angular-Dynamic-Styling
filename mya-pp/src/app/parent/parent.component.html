@@ -6,6 +6,7 @@
 <app-child1
 *ngFor="let note of notes"
   [notes]="note"
+  (idemiter)="changeColor($event)"
   [ngStyle]="{
     'box-shadow' : note.color ===titleColor ? '5px 5px 0 '+ titleColor :'',
     'border-radius' : '15px'

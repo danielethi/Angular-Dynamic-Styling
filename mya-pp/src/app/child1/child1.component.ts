@@ -15,6 +15,6 @@ export class Child1Component {
   ngOnInit(): void {}
 
   click() {
-    this.idemiter.emit(this.notes);
+    this.idemiter.emit(this.notes.color);
   }
 }

@@ -1,6 +1,14 @@
+<h1 [style.color]="titleColor">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nulla est pariatur, similique incidunt placeat quam officiis numquam inventore in ipsam id dolorem sapiente, qui accusantium aliquid. Illo, deserunt similique.
+</h1>
+
 <p>parent works!</p>
 <app-child1
-*ngFor="let notes of notes"
-  [notes]="notes"
+*ngFor="let note of notes"
+  [notes]="note"
+  [ngStyle]="{
+    'box-shadow' : note.color ===titleColor ? '5px 5px 0 '+ titleColor :'',
+    'border-radius' : '15px'
+  }"
 >
 </app-child1>

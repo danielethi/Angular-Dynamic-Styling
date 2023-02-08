@@ -39,11 +39,8 @@ export class ParentComponent {
     },
   ];
 
-
-
   titleColor ='red';
-
-
+  
   disableBorders(color: string) {
     console.log(color);
 

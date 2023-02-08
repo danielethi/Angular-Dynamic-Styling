@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Notes } from '../notes';
 
 @Component({
@@ -7,48 +7,14 @@ import { Notes } from '../notes';
   styleUrls: ['./child1.component.css'],
 })
 export class Child1Component {
-  titleColor=''
-  notes: Notes[] = [
-    {
-      title: 'Note 1',
-      content:
-        'Loreelit. Nostrum ab facere earum nam accusantium, hic aliquam ex nisi placeat! Exercitationem tempore dolore, provident fugiat sapiente ',
-      color: 'blue'
+  @Input() notes!: Notes;
+  @Output() idemiter = new EventEmitter();
 
-    },
-    {
-      title: 'Note 2',
-      content:
-        'lorem loremLorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab facere earum nam facilis optio a itaque, accusantium, hic aliquam ex nisi placeat! Exercitationem tempore dolore, provident loremlorem lorem ',
-      color: 'red'
+  constructor() {}
 
-    },
-    {
-      title: 'Note 3',
-      content:
-        'lorem loremLorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab facere earum nam facilis optio a itaque, accusantium, hic aliquam ex nisi placeat! Exercitationem tempore dolore, provident loremlorem lorem ',
-      color: 'black'
+  ngOnInit(): void {}
 
-    },
-    {
-      title: 'Note 3',
-      content:
-        'ContentLorem ipsum dolor sit adipisicing elit. Nostrum ab facere earum nam facilis optio a itaque, accusantium, hic aliquam ex nisi placeat! Exercitationem tempore dolore, provident fugiat sapiente of note 3',
-      color: 'green'
-
-    },
-  ];
-
-  color:string = 'red';
-
-
-  selectedColor = '';
-  contentStyle = {};
-
-  changeColor(color: string) {
-    this.selectedColor = color;
-    this.contentStyle={
-    'box-shadow': `0 0 10px ${color}`
-    }
+  click() {
+    this.idemiter.emit(this.notes);
   }
 }

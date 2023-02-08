@@ -1,0 +1,11 @@
+<h1 [style.color]="selectedColor">I Am The Ttle Of The Content</h1>
+
+<div *ngFor="let note of notes">
+  <p>{{ note.title }}</p>
+  <p [ngStyle]="contentStyle">{{ note.content }}</p>
+  <button [style.backgroundColor]="note.color" (click)="changeColor(note.color)">
+    set {{ note.color }}
+  </button>
+</div>
+
+
